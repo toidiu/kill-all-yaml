@@ -2,8 +2,7 @@ use std::fs::File;
 use std::io::BufReader;
 
 fn main() {
-    println!("Hello, world!");
-
+    println!("starting");
     let file_in: File = File::open(&"in.yml").expect("Could not load file");
     let file_out: File = File::create(&"out.json").expect("Could not load file");
 
@@ -11,6 +10,8 @@ fn main() {
     let value: serde_yaml::Value = serde_yaml::from_reader(reader).unwrap();
 
     serde_json::to_writer_pretty(file_out, &value);
+    println!("done");
+
 }
 
 // fn transcoded() {
