@@ -10,7 +10,7 @@ fn main() {
     let value: serde_yaml::Value = serde_yaml::from_reader(reader).unwrap();
 
     serde_json::to_writer_pretty(file_out, &value);
-    println!("done");
+    println!("done!!");
 
 }
 
